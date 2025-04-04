@@ -1,0 +1,14 @@
+from sklearn.cluster import KMeans
+import numpy as np
+
+
+np.random.seed(42)
+data_points = np.random.randn(100, 2) * 2 + np.array([5,6])
+kmeans =KMeans(n_clusters=3, random_state=42)
+kmeans.fit(data_points)
+
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+print(f"Cluster labels: {labels}")
+print(f"Centroids: {centroids}")
